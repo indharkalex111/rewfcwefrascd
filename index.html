@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Заказать обратный звонок</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Обратный звонок</title>
 </head>
-<body>
-  <h2>Оставьте номер телефона, и мы вам перезвоним</h2>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+  <h1>Заказать обратный звонок</h1>
+  <p>Введите номер телефона и нажмите кнопку:</p>
 
-  <button onclick="PlusofonCallback.show()">Позвоните мне</button>
+  <!-- Виджет Плюсофона -->
+  <div id="plusofon-callback"></div>
 
+  <!-- СКРИПТ ПЛЮСОФОНА -->
   <script defer src="https://cdn.plusofon.ru/callback.js" token="eiMtdOKu0IsHcLDJGsK9QOxbhwmITHXi"></script>
 </body>
 </html>
