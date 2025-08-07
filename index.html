@@ -2,17 +2,29 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Обратный звонок</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    iframe {
+      border: none;
+      max-width: 400px;
+      width: 100%;
+      height: 350px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+<body>
   <h1>Заказать обратный звонок</h1>
-  <p>Нажмите кнопку ниже, чтобы заказать обратный звонок:</p>
+  <p>Введите номер телефона и нажмите кнопку "Заказать звонок":</p>
 
-  <a href="https://cdn.plusofon.ru/callback.html?token=eiMtdOKu0IsHcLDJGsK9QOxbhwmITHXi"
-     target="_blank"
-     style="display:inline-block; padding: 12px 24px; background-color:#25c063; color:white; text-decoration:none; font-size:16px; border-radius:4px;">
-    📞 Заказать звонок
-  </a>
+  <iframe
+    src="https://cdn.plusofon.ru/callback.html?token=eiMtdOKu0IsHcLDJGsK9QOxbhwmITHXi"
+    scrolling="no"
+  ></iframe>
 </body>
 </html>
