@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <title>Обратный звонок</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+<body>
+
   <h1>Заказать обратный звонок</h1>
+  <p>Введите номер телефона и нажмите кнопку ниже:</p>
 
-  <button onclick="PlusofonCallback.show()" style="font-size: 18px; padding: 12px 24px; background-color:#25c063; color:white; border:none; border-radius:5px; cursor:pointer;">
-    📞 Позвоните мне
-  </button>
-
+  <!-- Виджет Плюсофон -->
   <script defer src="https://cdn.plusofon.ru/callback.js" token="eiMtdOKu0IsHcLDJGsK9QOxbhwmITHXi"></script>
+
 </body>
 </html>
