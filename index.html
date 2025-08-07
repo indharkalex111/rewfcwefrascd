@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Обратный звонок</title>
+  <title>Заказать обратный звонок</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -12,13 +12,58 @@
       padding: 20px;
       text-align: center;
     }
+    input, button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #25c063;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
+
   <h1>Заказать обратный звонок</h1>
-
-  <!-- Подключаем виджет Плюсофона -->
+  
+  <input type="tel" id="phoneInput" placeholder="Введите ваш номер телефона" />
+  
+  <button id="callBtn" disabled>Заказать звонок</button>
+  
   <script defer src="https://cdn.plusofon.ru/callback.js" token="eiMtdOKu0IsHcLDJGsK9QOxbhwmITHXi"></script>
-
+  
+  <script>
+    const phoneInput = document.getElementById('phoneInput');
+    const callBtn = document.getElementById('callBtn');
+    
+    phoneInput.addEventListener('input', () => {
+      callBtn.disabled = phoneInput.value.trim() === '';
+    });
+    
+    callBtn.addEventListener('click', () => {
+      const phone = phoneInput.value.trim();
+      if (!phone) return alert('Введите номер телефона!');
+      
+      // Запускаем виджет Плюсофона с переданным номером
+      // Метод show() — открывает виджет
+      // Метод setPhone() — устанавливает номер в форме (если доступен)
+      if (window.PlusofonCallback) {
+        window.PlusofonCallback.setPhone(phone);
+        window.PlusofonCallback.show();
+      } else {
+        alert('Виджет Плюсофона не загрузился.');
+      }
+    });
+  </script>
 </body>
 </html>
